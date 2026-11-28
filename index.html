@@ -183,7 +183,7 @@ footer p{margin:0 0 10px}footer a{color:var(--fg)}
 .rs{background:var(--olive);border-color:var(--olive);color:var(--bg)}
 .rs:hover{background:var(--fg);border-color:var(--fg);color:var(--bg)}
 .wa:hover{background:var(--fg)}
-.tag.pre{background:var(--olive);color:var(--bg);text-transform:uppercase;letter-spacing:.04em;font-size:10.5px;line-height:1.3}
+.tag.dr{background:var(--olive);color:var(--bg);text-transform:uppercase;letter-spacing:.04em;font-size:10.5px;line-height:1.3}
 .uhd{flex-wrap:wrap}
 .uhd .ugbtns{gap:8px}
 #usnd{padding:9px 10px;font-weight:600}
@@ -248,10 +248,10 @@ footer p{margin:0 0 10px}footer a{color:var(--fg)}
 <h2 class="h2">Drop de décembre</h2>
 <div class="drop">
 <div>
-<span class="badge">Précommande ouverte</span>
-<p>Six hoodies oversize en édition limitée : blanc, noir, gris, jaune crème, taupe et vert, avec le logo Sénflow brodé sur la poitrine. Tailles L, XL et XXL.</p>
+<span class="badge">Disponible maintenant</span>
+<p>Six hoodies oversize en édition limitée : blanc, noir, gris, jaune crème, taupe et vert, avec le logo Sénflow sur la poitrine. Tailles L, XL et XXL.</p>
 <p class="cd" id="cd"></p>
-<p><a class="btn p mag" href="#catalogue" data-f="hoodie">Précommander un hoodie</a></p>
+<p><a class="btn p mag" href="#catalogue" data-f="hoodie">Commander un hoodie</a></p>
 </div>
 <div class="stats">
 <div><b data-n="30">0</b><span>pièces au total</span></div>
@@ -336,14 +336,14 @@ l5:'data:image/webp;base64,UklGRo5EAQBXRUJQVlA4IIJEAQCw9QidASorBEAGPm00lkikIrGuI
 <script>
 /* ===== Configuration : modifie ici ===== */
 const C={wa:'221767590999',drop:null /* ex. '2026-12-15T18:00:00' */,ig:'' /* lien Instagram */},S=['L','XL','XXL'];
-/* s:1 = SOLD OUT · pre:1 = précommande · photo : voir IMG plus haut (sinon silhouette) · sz:['U'] = taille unique (sinon L, XL, XXL) */
+/* s:1 = SOLD OUT · drop:'Décembre' = étiquette du drop (vente normale) · photo : voir IMG plus haut (sinon silhouette) · sz:['U'] = taille unique (sinon L, XL, XXL) */
 const P=[
-{id:'h1',k:'hoodie',n:'Hoodie oversize',col:'Blanc',d:'logo noir',p:6000,c:'#f5f5f3',i:'#0a0a0a',pre:1},
-{id:'h2',k:'hoodie',n:'Hoodie oversize',col:'Noir',d:'logo gris',p:6000,c:'#161616',i:'#8a8a8a',pre:1},
-{id:'h3',k:'hoodie',n:'Hoodie oversize',col:'Gris',d:'logo blanc',p:6000,c:'#6b6b6b',i:'#f5f5f3',pre:1},
-{id:'h4',k:'hoodie',n:'Hoodie oversize',col:'Jaune / Crème',d:'logo camouflage',p:6000,c:'#f3e6a6',i:'#3b4732',pre:1},
-{id:'h5',k:'hoodie',n:'Hoodie oversize',col:'Taupe / Beige-Marron',d:'logo camouflage',p:6000,c:'#a8967a',i:'#3b4732',pre:1},
-{id:'h6',k:'hoodie',n:'Hoodie oversize',col:'Vert',d:'logo camouflage',p:6000,c:'#2f8a4c',i:'#f7f5f0',pre:1},
+{id:'h1',k:'hoodie',n:'Hoodie oversize',col:'Blanc',d:'logo noir',p:6000,c:'#f5f5f3',i:'#0a0a0a',drop:'Décembre'},
+{id:'h2',k:'hoodie',n:'Hoodie oversize',col:'Noir',d:'logo gris',p:6000,c:'#161616',i:'#8a8a8a',drop:'Décembre'},
+{id:'h3',k:'hoodie',n:'Hoodie oversize',col:'Gris',d:'logo blanc',p:6000,c:'#6b6b6b',i:'#f5f5f3',drop:'Décembre'},
+{id:'h4',k:'hoodie',n:'Hoodie oversize',col:'Jaune / Crème',d:'logo camouflage',p:6000,c:'#f3e6a6',i:'#3b4732',drop:'Décembre'},
+{id:'h5',k:'hoodie',n:'Hoodie oversize',col:'Taupe / Beige-Marron',d:'logo camouflage',p:6000,c:'#a8967a',i:'#3b4732',drop:'Décembre'},
+{id:'h6',k:'hoodie',n:'Hoodie oversize',col:'Vert',d:'logo camouflage',p:6000,c:'#2f8a4c',i:'#f7f5f0',drop:'Décembre'},
 {id:'t1',k:'tee',n:'T-shirt No Copy Just Culture',col:'Gris délavé',p:4500,c:'#7d7d7a',i:'#f5f5f3',s:1},
 {id:'t2',k:'tee',n:'T-shirt No Copy Just Culture',col:'Violet délavé',p:4500,c:'#7a6a8c',i:'#f5f5f3',s:1},
 {id:'t3',k:'tee',n:'T-shirt No Copy Just Culture',col:'Beige sable délavé',p:4500,c:'#c9b79c',i:'#0a0a0a',s:1},
@@ -370,15 +370,15 @@ const rs=(p,s=(p.sz&&p.sz.length==1?p.sz[0]:''))=>`https://wa.me/${C.wa}?text=${
 const sil=p=>{const t=p.k=='tee'?'M62 22 90 12h20l28 10 40 30-18 32-20-10v96H60V74L40 84 22 52z':'M70 20Q100 4 130 20l46 32-8 80-24-6v62H60v-62l-24 6-8-80z';
 return `<svg viewBox="0 0 200 200" role="img" aria-label="${p.n} ${p.col}"><path d="${t}" fill="${p.c}" stroke="#2a2a2a" stroke-width="2"/><text x="100" y="${p.k=='tee'?92:100}" text-anchor="middle" font-size="${p.k=='tee'?17:15}" fill="${p.i}" font-family="Anton,Impact,sans-serif">SÉNFLOW</text></svg>`};
 const card=p=>{const x=p.s;return `<article class="card" data-id="${p.id}">
-<div class="vis${x?' off':''}">${p.img?`<img src="${p.img}" alt="${p.n} ${p.col}" width="800" height="1000" loading="lazy" decoding="async">`:sil(p)}<span class="tag${p.pre&&!x?' pre':''}">${x?'SOLD OUT':p.pre?'Précommande<br>Drop décembre':'En stock'}</span></div>
+<div class="vis${x?' off':''}">${p.img?`<img src="${p.img}" alt="${p.n} ${p.col}" width="800" height="1000" loading="lazy" decoding="async">`:sil(p)}<span class="tag${p.drop&&!x?' dr':''}">${x?'SOLD OUT':p.drop?`Drop ${p.drop}<br>Disponible`:'En stock'}</span></div>
 <div class="info"><h3>${p.n}</h3><p class="meta">${p.col}${p.d?', '+p.d:''}</p><p class="price">${F(p.p)}</p>
 <div class="sizes">${(p.sz||S).map((s,_,r)=>`<button class="${r.length==1?'on':''}" data-s="${s}">${SL(s)}</button>`).join('')}</div>
-${x?`<div class="act"><button class="add" disabled>SOLD OUT</button><a class="rs" href="${rs(p)}" target="_blank" rel="noopener">Restock</a></div>`:`<button class="add">${p.pre?'Précommander':'Ajouter au panier'}</button>`}</div></article>`};
+${x?`<div class="act"><button class="add" disabled>SOLD OUT</button><a class="rs" href="${rs(p)}" target="_blank" rel="noopener">Restock</a></div>`:`<button class="add">Ajouter au panier</button>`}</div></article>`};
 const draw=()=>{$('#grid').innerHTML=P.filter(p=>flt=='all'||(flt=='av'?!p.s:p.k==flt)).map(card).join('');$$('#chips button').forEach(b=>b.classList.toggle('on',b.dataset.f==flt))};
 function rc(){const g=i=>P.find(p=>p.id==i.id),n=cart.reduce((a,i)=>a+i.q,0),t=cart.reduce((a,i)=>a+i.q*g(i).p,0);
 $('#cnt').textContent=n;$('#tot').textContent=F(t);
-$('#lines').innerHTML=cart.length?cart.map((i,x)=>{const p=g(i);return `<li><div><b>${p.n}, ${p.col}</b><small>Taille ${tl(i.s)}, ${F(p.p)}${p.pre?', Précommande Décembre':''}</small></div><div class="qty"><button data-q="${x}" data-d="-1" aria-label="Retirer un">−</button><span>${i.q}</span><button data-q="${x}" data-d="1" aria-label="Ajouter un">+</button></div></li>`}).join(''):'<li class="empty">Ton panier est vide. Choisis une pièce et une taille.</li>';
-const msg='Salam Sénflow ! Je souhaite commander :\n'+cart.map(i=>{const p=g(i);return `• ${i.q} × ${p.n} ${p.col}, taille ${tl(i.s)} : ${F(p.p*i.q)}${p.pre?' (Précommande Décembre)':''}`}).join('\n')+`\n\nTotal : ${F(t)}\nVille / quartier de livraison :`;
+$('#lines').innerHTML=cart.length?cart.map((i,x)=>{const p=g(i);return `<li><div><b>${p.n}, ${p.col}</b><small>Taille ${tl(i.s)}, ${F(p.p)}${p.drop?`, Drop ${p.drop}`:''}</small></div><div class="qty"><button data-q="${x}" data-d="-1" aria-label="Retirer un">−</button><span>${i.q}</span><button data-q="${x}" data-d="1" aria-label="Ajouter un">+</button></div></li>`}).join(''):'<li class="empty">Ton panier est vide. Choisis une pièce et une taille.</li>';
+const msg='Salam Sénflow ! Je souhaite commander :\n'+cart.map(i=>{const p=g(i);return `• ${i.q} × ${p.n} ${p.col}, taille ${tl(i.s)} : ${F(p.p*i.q)}${p.drop?` (Drop ${p.drop})`:''}`}).join('\n')+`\n\nTotal : ${F(t)}\nVille / quartier de livraison :`;
 const a=$('#wa');a.href=cart.length?`https://wa.me/${C.wa}?text=${encodeURIComponent(msg)}`:'#';a.classList.toggle('dis',!cart.length);
 try{localStorage.setItem('snfw',JSON.stringify(cart))}catch(e){}}
 function add(id,s){const i=cart.find(x=>x.id==id&&x.s==s);i?i.q++:cart.push({id,s,q:1});rc();toast('Ajouté au panier')}
@@ -398,7 +398,7 @@ function count(el){const n=+el.dataset.n,u=el.dataset.suf||'';if(RM){el.textCont
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');$$('[data-n]',e.target).forEach(count);io.unobserve(e.target)}}),{threshold:.15});
 $$('.rv').forEach(x=>io.observe(x));
 if(!RM&&matchMedia('(hover:hover)').matches)$$('.mag').forEach(b=>{b.onpointermove=e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.2}px,${(e.clientY-r.top-r.height/2)*.3}px)`};b.onpointerleave=()=>b.style.transform=''});
-if(C.drop){const d=new Date(C.drop),el=$('#cd'),t=()=>{const s=Math.max(0,(d-Date.now())/1e3|0);el.textContent=s?`Sortie dans ${s/86400|0} j ${s%86400/3600|0} h ${s%3600/60|0} min`:'Le drop est en ligne'};t();setInterval(t,30000)}else $('#cd').textContent='Sortie : décembre 2026';
+if(C.drop){const d=new Date(C.drop),el=$('#cd'),t=()=>{const s=Math.max(0,(d-Date.now())/1e3|0);el.textContent=s?`Sortie dans ${s/86400|0} j ${s%86400/3600|0} h ${s%3600/60|0} min`:'Le drop est en ligne'};t();setInterval(t,30000)}else $('#cd').textContent='Disponible dès maintenant';
 $('#mqt').innerHTML='<span>NO COPY. JUST CULTURE.</span><span>✦</span><span>FROM SENEGAL TO THE WORLD</span><span>✦</span>'.repeat(4);
 $('#waf').href='https://wa.me/'+C.wa;if(C.ig){const i=$('#ig');i.href=C.ig;i.hidden=false}
 const rv=d=>$('#revs').scrollBy({left:d,behavior:RM?'auto':'smooth'});$('#rp').onclick=()=>rv(-340);$('#rn').onclick=()=>rv(340);
